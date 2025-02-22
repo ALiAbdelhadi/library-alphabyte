@@ -1,10 +1,9 @@
-import Timeline from '@/components/blocks/Timeline'
-import { TimeLineData } from '@/constant'
+import TimelineContainer from '@/components/blocks/timeline/TimelineContainer'
 
-const page = () => {
+const TimelinePage = () => {
    return (
-      <Timeline data={TimeLineData} />
+      <TimelineContainer />
    )
 }
 
-export default page
+export default TimelinePage

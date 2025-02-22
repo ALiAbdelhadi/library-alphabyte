@@ -1,10 +1,10 @@
 import CarouselCompForProject from '@/components/blocks/Carousel/CarouselBigContainer'
 import React from 'react'
 
-const page = () => {
+const Carousel_2 = () => {
    return (
       <CarouselCompForProject />
    )
 }
 
-export default page
+export default Carousel_2

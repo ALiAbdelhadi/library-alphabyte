@@ -1,8 +1,8 @@
 import CarouselContainer from '@/components/blocks/Carousel/CarouselContainer'
-const page = () => {
+const Carousel_1 = () => {
    return (
       <CarouselContainer />
    )
 }
 
-export default page
+export default Carousel_1
