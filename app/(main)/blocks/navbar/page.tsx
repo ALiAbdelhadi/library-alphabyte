@@ -1,10 +1,10 @@
 import { Navbar } from '@/components/blocks/NavBar'
 import React from 'react'
 
-const page = () => {
+const NavbarPage = () => {
    return (
       <Navbar />
    )
 }
 
-export default page
+export default NavbarPage
