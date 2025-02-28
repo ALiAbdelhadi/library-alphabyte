@@ -1,9 +1,7 @@
-import CarouselCompForProject from '@/components/blocks/Carousel/CarouselBigContainer'
-import React from 'react'
-
+import CarouselContainer from '@/components/blocks/Carousel/CarouselContainer'
 const Carousel_2 = () => {
    return (
-      <CarouselCompForProject />
+      <CarouselContainer />
    )
 }
 
