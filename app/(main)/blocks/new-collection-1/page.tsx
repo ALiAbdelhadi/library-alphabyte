@@ -1,9 +1,7 @@
-import NewCollection from '@/components/blocks/new-collection/NewCollection'
+import NewCollection from "@/components/blocks/new-collection/NewCollection";
 
 const NewCollectionPage = () => {
-   return (
-      <NewCollection />
-   )
-}
+  return <NewCollection />;
+};
 
-export default NewCollectionPage
+export default NewCollectionPage;

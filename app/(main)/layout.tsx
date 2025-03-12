@@ -1,12 +1,12 @@
-import Container from '@/components/Container'
-import { ReactNode } from 'react'
+import Container from "@/components/Container";
+import { ReactNode } from "react";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
-   return (
-      <Container>
-         <div>{children}</div>
-      </Container>
-   )
-}
+  return (
+    <Container>
+      <div>{children}</div>
+    </Container>
+  );
+};
 
-export default MainLayout
+export default MainLayout;

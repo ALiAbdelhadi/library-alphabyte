@@ -1,4 +1,4 @@
 type TimeLineProps = {
-    title: string;
-    content: ReactNode;
+  title: string;
+  content: ReactNode;
 };

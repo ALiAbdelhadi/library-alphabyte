@@ -1,10 +1,8 @@
-import CarouselCompForProject from '@/components/blocks/carousel-1/carousel-big-container'
-import React from 'react'
+import CarouselCompForProject from "@/components/blocks/carousel-1/carousel-big-container";
+import React from "react";
 
 const Carousel_1 = () => {
-   return (
-      <CarouselCompForProject />
-   )
-}
+  return <CarouselCompForProject />;
+};
 
-export default Carousel_1
+export default Carousel_1;

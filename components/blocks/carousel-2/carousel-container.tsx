@@ -1,14 +1,11 @@
-
-import { CarouselsData } from '@/constant';
-import { Card, Carousel } from '../carousel-2/carousel';
+import { CarouselsData } from "@/constant";
+import { Card, Carousel } from "../carousel-2/carousel";
 
 const CarouselContainer = () => {
-   const cards = CarouselsData.map((card, index) => (
-      <Card key={card.src} card={card} index={index} />
-   ));
-   return (
-      <Carousel items={cards} />
-   )
-}
+  const cards = CarouselsData.map((card, index) => (
+    <Card key={card.src} card={card} index={index} />
+  ));
+  return <Carousel items={cards} />;
+};
 
-export default CarouselContainer
+export default CarouselContainer;

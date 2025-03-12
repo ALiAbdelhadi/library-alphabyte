@@ -1,8 +1,6 @@
-import CarouselContainer from "@/components/blocks/carousel-2/carousel-container"
+import CarouselContainer from "@/components/blocks/carousel-2/carousel-container";
 const Carousel_2 = () => {
-   return (
-      <CarouselContainer />
-   )
-}
+  return <CarouselContainer />;
+};
 
-export default Carousel_2
+export default Carousel_2;

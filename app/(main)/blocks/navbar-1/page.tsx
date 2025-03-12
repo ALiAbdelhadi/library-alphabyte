@@ -1,10 +1,8 @@
-import { Navbar } from '@/components/blocks/NavBar'
-import React from 'react'
+import { Navbar } from "@/components/blocks/NavBar";
+import React from "react";
 
 const NavbarPage = () => {
-   return (
-      <Navbar />
-   )
-}
+  return <Navbar />;
+};
 
-export default NavbarPage
+export default NavbarPage;

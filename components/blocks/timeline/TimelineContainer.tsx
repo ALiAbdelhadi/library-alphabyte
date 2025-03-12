@@ -1,10 +1,8 @@
-import { TimeLineData } from '@/constant'
-import Timeline from './Timeline'
+import { TimeLineData } from "@/constant";
+import Timeline from "./Timeline";
 
 const TimelineContainer = () => {
-   return (
-      <Timeline data={TimeLineData} />
-   )
-}
+  return <Timeline data={TimeLineData} />;
+};
 
-export default TimelineContainer
+export default TimelineContainer;

@@ -1,9 +1,7 @@
-import TimelineContainer from '@/components/blocks/timeline/TimelineContainer'
+import TimelineContainer from "@/components/blocks/timeline/TimelineContainer";
 
 const TimelinePage = () => {
-   return (
-      <TimelineContainer />
-   )
-}
+  return <TimelineContainer />;
+};
 
-export default TimelinePage
+export default TimelinePage;

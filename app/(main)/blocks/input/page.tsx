@@ -1,8 +1,6 @@
-import { Input } from '@/components/ui/input'
+import { Input } from "@/components/ui/input";
 const page = () => {
-    return (
-        <Input />
-    )
-}
+  return <Input />;
+};
 
-export default page
+export default page;

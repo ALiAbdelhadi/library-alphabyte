@@ -2,33 +2,22 @@
   "extends": [
     "next/core-web-vitals",
     "next/typescript",
-    "plugin:tailwindcss/recommended",
-    "@typescript-eslint/no-unused-vars"
+    "plugin:tailwindcss/recommended"
   ],
   "rules": {
-    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-unused-vars": "off",
     "no-console": [
       "error",
       {
-        "allow": [
-          "info",
-          "warn",
-          "error"
-        ]
+        "allow": ["info", "warn", "error"]
       }
     ],
     "tailwindcss/classnames-order": "error",
-    "tailwindcss/no-custom-classname": [
-      "warn"
-    ]
+    "tailwindcss/no-custom-classname": ["warn"]
   },
   "overrides": [
     {
-      "files": [
-        "*.ts",
-        "*.tsx",
-        "*.js"
-      ],
+      "files": ["*.ts", "*.tsx", "*.js"],
       "parser": "@typescript-eslint/parser"
     }
   ]
