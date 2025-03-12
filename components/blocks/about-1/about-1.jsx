@@ -6,9 +6,9 @@ import { useEffect, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-import React from 'react'
+import React from 'react';
 
-const about_1 = () => {
+const About_1 = () => {
    const sectionRef = useRef(null);
    useEffect(() => {
       const elements = sectionRef.current.querySelectorAll('.animate-element');
@@ -144,4 +144,4 @@ const about_1 = () => {
    );
 }
 
-export default about_1
+export default About_1
