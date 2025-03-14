@@ -1,10 +1,5 @@
-"use client";
+"use client"
 
-import { useOutsideClick } from "@/hooks/outSideClick";
-import { cn } from "@/lib/utils";
-import { IconArrowNarrowLeft, IconArrowNarrowRight } from "@tabler/icons-react";
-import { motion } from "framer-motion";
-import Image, { ImageProps } from "next/image";
 import {
   createContext,
   Fragment,
@@ -12,31 +7,37 @@ import {
   useEffect,
   useRef,
   useState,
-} from "react";
+} from "react"
+import Image, { ImageProps } from "next/image"
+import { IconArrowNarrowLeft, IconArrowNarrowRight } from "@tabler/icons-react"
+import { motion } from "framer-motion"
+
+import { cn } from "@/lib/utils"
+import { useOutsideClick } from "@/hooks/out-side-click"
 
 interface CarouselProps {
-  items: JSX.Element[];
-  initialScroll?: number;
-  cardGap?: number;
-  scrollOffset?: number;
-  initialActiveIndex?: number;
+  items: JSX.Element[]
+  initialScroll?: number
+  cardGap?: number
+  scrollOffset?: number
+  initialActiveIndex?: number
 }
 
 interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  link: string;
+  id: number
+  title: string
+  description: string
+  image: string
+  link: string
 }
 
 const CarouselContext = createContext<{
-  onCardClick: (index: number) => void;
-  currentIndex: number;
+  onCardClick: (index: number) => void
+  currentIndex: number
 }>({
-  onCardClick: () => {},
+  onCardClick: () => { },
   currentIndex: 0,
-});
+})
 
 export const CarouselProject = ({
   items,
@@ -45,48 +46,48 @@ export const CarouselProject = ({
   scrollOffset: initialScrollOffset,
   initialActiveIndex = 1,
 }: CarouselProps) => {
-  const [scrollOffset, setScrollOffset] = useState(950);
+  const [scrollOffset, setScrollOffset] = useState(950)
   useEffect(() => {
-    const WidthWindow = window.innerWidth;
+    const WidthWindow = window.innerWidth
     if (WidthWindow < 789) {
-      setScrollOffset(260);
+      setScrollOffset(260)
     } else {
-      setScrollOffset(950);
+      setScrollOffset(950)
     }
-  }, []);
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(initialActiveIndex);
+  }, [])
+  const carouselRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(true)
+  const [currentIndex, setCurrentIndex] = useState(initialActiveIndex)
   const checkScrollAbility = () => {
     if (carouselRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current
+      setCanScrollLeft(scrollLeft > 0)
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth)
     }
-  };
+  }
   useEffect(() => {
     if (carouselRef.current && initialActiveIndex !== undefined) {
-      const itemWidth = carouselRef.current.offsetWidth - 500;
-      const scrollTo = itemWidth * initialActiveIndex;
+      const itemWidth = carouselRef.current.offsetWidth - 500
+      const scrollTo = itemWidth * initialActiveIndex
       carouselRef.current.scrollTo({
         left: scrollTo,
         behavior: "smooth",
-      });
+      })
     }
-  }, [initialActiveIndex]);
+  }, [initialActiveIndex])
 
   const scroll = (direction: "left" | "right") => {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({
         left: direction === "left" ? -scrollOffset : scrollOffset,
         behavior: "smooth",
-      });
+      })
     }
-  };
+  }
   const handleCarouselClick = (index: number) => {
-    setCurrentIndex(index);
-  };
+    setCurrentIndex(index)
+  }
 
   return (
     <CarouselContext.Provider
@@ -136,32 +137,32 @@ export const CarouselProject = ({
         </div>
       </div>
     </CarouselContext.Provider>
-  );
-};
+  )
+}
 
 export const CardProject = ({
   project,
   index,
   layout = false,
 }: {
-  project: Project;
-  index: number;
-  layout?: boolean;
+  project: Project
+  index: number
+  layout?: boolean
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
-  useOutsideClick(containerRef, () => setIsOpen(false));
+  const [isOpen, setIsOpen] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const cardRef = useRef<HTMLDivElement>(null)
+  useOutsideClick(containerRef, () => setIsOpen(false))
   const handleCardClick = () => {
-    setIsOpen(true);
+    setIsOpen(true)
     if (cardRef.current) {
       cardRef.current.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
         inline: "center",
-      });
+      })
     }
-  };
+  }
   return (
     <Fragment>
       <motion.div
@@ -193,8 +194,8 @@ export const CardProject = ({
         />
       </motion.div>
     </Fragment>
-  );
-};
+  )
+}
 
 export const BlurImage = ({
   height,
@@ -204,13 +205,13 @@ export const BlurImage = ({
   alt,
   ...rest
 }: ImageProps) => {
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true)
   return (
     <Image
       className={cn(
         "transition duration-300",
         isLoading ? "blur-sm" : "blur-0",
-        className,
+        className
       )}
       onLoad={() => setLoading(false)}
       src={src || "/placeholder.svg"}
@@ -222,5 +223,5 @@ export const BlurImage = ({
       alt={alt ? alt : "Background of a beautiful view"}
       {...rest}
     />
-  );
-};
+  )
+}
